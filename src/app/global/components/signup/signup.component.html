@@ -1,0 +1,30 @@
+
+<section style="background-color: #eee;min-height: 100vh;">
+    <app-select-language></app-select-language>
+    <form class="container" [formGroup]="myForm" (ngSubmit)="submitData()">
+        <div >
+            <div class="my-3">
+                <p class="m-0">{{"signup.name" | translate}}</p>
+                <input formControlName="name" type="text" [placeholder]="'signup.name' | translate" class="form-control"/>
+            </div>
+            <div class="my-3">
+                <p class="m-0">{{"signup.email" | translate}}</p>
+                <input formControlName="email" type="email" [placeholder]="'signup.email' | translate" class="form-control"/>
+            </div>
+            <div class="my-3">
+                <p class="m-0">{{"signup.password" | translate}}</p>
+                <input formControlName="password" type="email" [placeholder]="'signup.password' | translate" class="form-control"/>
+            </div>
+            <button [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    <div class="d-flex mt-3">
+        <button class="text-primary fw-bold p-4" routerLink="signin">login</button>
+    </div>
+    <div *ngIf="err">
+        <p class="text-danger fw-bold">{{err}}</p>
+    </div>
+    <button (click)="openDialog()" class="border">openDialog</button>
+</section>
+
+

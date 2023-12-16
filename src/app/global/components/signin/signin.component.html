@@ -1,0 +1,24 @@
+
+
+<section  style="background-color: #eee;min-height: 100vh;">
+    <app-select-language></app-select-language>
+    <div class="container">
+        <form [formGroup]="myFrom" (ngSubmit)="submit()">
+            <div class="my-3">
+                <p class="m-0">{{"signup.email" | translate}}</p>
+                <input formControlName="email" type="email" [placeholder]="'signup.email' | translate" class="form-control"/>
+            </div>
+            <div class="my-3">
+                <p class="m-0">{{"signup.password" | translate}}</p>
+                <input formControlName="password" type="password" [placeholder]="'signup.password' | translate" class="form-control"/>
+            </div>
+            <button class="btn btn-primary">submit</button>
+        </form>
+    </div>
+    <div *ngIf="err">
+        <p class="fw-bold text-danger">
+            {{err}}
+        </p>
+    </div>
+</section>
+

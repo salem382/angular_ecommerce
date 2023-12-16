@@ -1,0 +1,8 @@
+{
+    "title":"title",
+    "signup":{
+        "name":"name",
+        "email":"email",
+        "password":"password"
+    }
+}
