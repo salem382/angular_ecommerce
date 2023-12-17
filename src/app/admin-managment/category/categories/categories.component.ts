@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/core/http/category.service';
 import { MessageComponent } from 'src/app/global/components/message/message.component';
+import { Category } from 'src/app/global/models/category.mode';
 
 @Component({
   selector: 'app-categories',
@@ -13,14 +14,13 @@ import { MessageComponent } from 'src/app/global/components/message/message.comp
 
 export class CategoriesComponent implements OnInit {
 
-  Categories:any;
+  Categories:Category[] = [];
 
   constructor (
     private _CategoryService:CategoryService,
     private _MatDialog:MatDialog,
     ) {
   }
-
   
   ngOnInit(): void {
     this.getAllCategories();
